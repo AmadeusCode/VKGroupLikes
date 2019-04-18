@@ -21,7 +21,7 @@ VK Group Likes Bot - бот для автоматизации работы с г
 #### Открываем и тут нам нужно выбрать, как получим доступ к аккаунту:  <br/>
   - Через __Логин/Пароль__
   - Либо Через __Токен__
-![Фото](https://i.imgur.com/s6Y5ur9.png)
+![Фото](https://i.imgur.com/s6Y5ur9.png)  
 В первом случае пишем в поля YOUR_LOGIN/YOUR_PASSWORD cвой Логин/Пароль  
 Во втором же, переходим по ссылке [https://oauth.vk.com/token?grant_type=password&client_id=2274003&client_secret=hHbZxrka2uZ6jB1inYsH&username=**login**&password=**password**](https://oauth.vk.com/token?grant_type=password&client_id=2274003&client_secret=hHbZxrka2uZ6jB1inYsH&username=**login**&password=**password**)  
   Где **login** и **password**, логин и пароль соответственно
