@@ -11,7 +11,7 @@ except ImportError:
     import vk_api
 #   Import config data
 config = config.config
-__version__ = 0.51
+__version__ = 0.2
 last_post_from_group = 0
 print('Starting VKGroupLikes ...')
 #   function start VK session
