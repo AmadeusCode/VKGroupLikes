@@ -45,7 +45,7 @@ def last_posts(last_post, count):
             if is_liked(id) == False:
                 try:
                     vk.likes.add(type = 'post', owner_id = config.get('group_id'), item_id = id)
-                    print('{} Liked post {}'.format(get_time(), + str(id)) )
+                    print('{} Liked post {}'.format(get_time(), str(id)) )
                 except vk_api.exceptions.ApiError:
                     print('{} Post Deleted {}'.format(get_time(), str(id)) )
                 except vk_api.exceptions.ApiHttpError:
