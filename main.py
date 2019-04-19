@@ -1,9 +1,17 @@
 # -*- coding: utf-8 -*-
 #   Import standart libraries and vk_api
 import requests, time, config, datetime
-import vk_api
+#   Install vk_api from pip
+from os import system
+try:
+    import vk_api
+except ImportError:
+    print('Installing VK_API ...')
+    system('pip install vk_api')
+    import vk_api
 #   Import config data
 config = config.config
+__version__ = 0.51
 last_post_from_group = 0
 print('Starting VKGroupLikes ...')
 #   function start VK session
@@ -15,6 +23,9 @@ def vk_login():
         print('Successful login')
         vk_session = vk_api.VkApi(config.get('login'), config.get('password') )
         vk_session.auth()
+    elif config.get('group_id') == ('' or 'YOUR_GROUP_ID'):
+        print('Please set group id')
+        exit()
     else:
         print("You have not provided a login and password or token.\nLogin like: email or +7xxxxxxxxxx")
         exit()
@@ -73,7 +84,7 @@ def new_posts():
             except vk_api.exceptions.ApiHttpError:
                 print( get_time() + 'Network Error')
         else:
-            print('All new post liked, waiting {} seconds'.format(config.get('cooldown_check')))
+            print('{} All new posts liked, waiting {} seconds'.format(get_time(), config.get('cooldown_check')))
             time.sleep(config.get('cooldown_check'))
 # Start Script and select mode
 if __name__ == "__main__":
