@@ -67,7 +67,7 @@ def last_posts(last_post, count):
             result_time = time_start - time.time()
     print('{} All Done in {} seconds'.format(get_time(), str(abs(round(result_time, 3)))) )
     global last_post_from_group; last_post_from_group = id
-# function Liked all new posts
+#   function Liked all new posts
 def new_posts():
     global last_post_from_group
     if last_post_from_group == 0:
